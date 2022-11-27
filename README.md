@@ -81,7 +81,8 @@ npm start
 
 ## Lessons Learned 🏫🏫🏫
 
-✅
+✅ Exporting import defaults using index.tsx @pages & @components
+✅ ctrl/cmd + w => to close current tabs on VS Code
 
 <br>
 
