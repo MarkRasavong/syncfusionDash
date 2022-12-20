@@ -1,6 +1,11 @@
 import React from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
+import { FiShoppingCart } from 'react-icons/fi'
+import { BsChatLeft } from 'react-icons/bs'
+import { RiNotification3Line } from 'react-icons/ri'
+import { MdKeyboardArrowDown } from 'react-icons/md'
+import avatar from '../data/avatar.jpg'
 
 import {
 	StoreContextInterface,
@@ -40,14 +45,61 @@ NavBtn.defaultProps = {
 const Navbar = () => {
 	const { setActiveMenu } = useStateContext() as StoreContextInterface
 
+	const handleClick = (e: string) => {
+		// eslint-disable-next-line no-console
+		console.log(e)
+	}
+
 	return (
-		<div className="flex justify-items-between p-2 md:mx-6 relative">
+		<div className="flex justify-between p-2 md:mx-6 relative">
 			<NavBtn
 				title="Menu"
 				customFn={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
 				color="blue"
 				icon={<AiOutlineMenu />}
 			/>
+			<div className="flex">
+				<NavBtn
+					title="Cart"
+					customFn={() => handleClick('cart')}
+					color="blue"
+					icon={<FiShoppingCart />}
+				/>
+				<NavBtn
+					title="Chat"
+					customFn={() => handleClick('chat')}
+					dotColor="#03C9D7"
+					color="blue"
+					icon={<BsChatLeft />}
+				/>
+				<NavBtn
+					title="Notifications"
+					customFn={() => handleClick('notification')}
+					dotColor="#03C9D7"
+					color="blue"
+					icon={<RiNotification3Line />}
+				/>
+				<TooltipComponent content="Profile" position="BottomCenter">
+					<div
+						role="presentation"
+						className="flex item-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+						onClick={() => handleClick('userProfile')}
+					>
+						<img
+							className="rounded-full w-8 h-8"
+							src={avatar}
+							alt="user avatar"
+						/>
+						<p>
+							<span className="text-gray-400 text-14">Hi, </span>{' '}
+							<span className="text-gray-400 text-bold ml-1 text-14">
+								Michel
+							</span>
+						</p>
+						<MdKeyboardArrowDown className="text-gray-400 text-14" />
+					</div>
+				</TooltipComponent>
+			</div>
 		</div>
 	)
 }
