@@ -82,14 +82,12 @@ npm start
 
 ## Lessons Learned 🏫🏫🏫
 
-✅ exporting import defaults using index.tsx @pages & @components
-✅ ctrl/cmd + w => to close current tabs on VS Code
-✅ ctrl + ▶ => move to next whitespace
-✅ resolving ts module errors using index.d.ts
-✅ Context TS Types => PropsWithChildren
-✅ ```The object passed as the value prop to the Context provider (at line 29) changes every render. To fix this consider wrapping it in a useMemo hook.``` => useMemo to avoid rerender when the values haven't been changed
-
-<br>
+✅ exporting import defaults using index.tsx @pages & @components <br>
+✅ ctrl/cmd + w => to close current tabs on VS Code <br>
+✅ ctrl + ▶ => move to next whitespace <br>
+✅ resolving ts module errors using index.d.ts <br>
+✅ Context TS Types => PropsWithChildren <br>
+✅ ```The object passed as the value prop to the Context provider (at line 29) changes every render. To fix this consider wrapping it in a useMemo hook.``` => useMemo to avoid rerender when the values haven't been changed <br>
 
 ## Where to find more 📞💻📧
 
