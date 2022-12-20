@@ -22,9 +22,13 @@ import {
 	Financial,
 } from './pages'
 import './App.css'
+import {
+	StoreContextInterface,
+	useStateContext,
+} from './contexts/ContextProvider'
 
 const App = () => {
-	const activeMenu = true
+	const { activeMenu } = useStateContext() as StoreContextInterface
 
 	return (
 		<div>
