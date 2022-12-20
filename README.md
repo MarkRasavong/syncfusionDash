@@ -62,6 +62,7 @@ The list of dependencies used for code quality and test are :
     "postcss"
     "prettier"
     "tailwindcss"
+```
 
 <br>
 
@@ -97,4 +98,3 @@ npm start
 **My Github Repositories:** https://github.com/MarkRasavong?tab=repositories <br>
 **Email:** rasavong.mark@gmail.com <br>
 **Mobile / WhatsApp:** +34 666 996 519
-```
