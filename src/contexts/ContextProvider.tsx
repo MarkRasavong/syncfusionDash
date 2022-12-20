@@ -11,6 +11,21 @@ import React, {
 export interface StoreContextInterface {
 	activeMenu: boolean
 	setActiveMenu: Dispatch<SetStateAction<boolean>>
+	handleClick: (clicked: string) => void
+	isClicked: {
+		chat: boolean
+		cart: boolean
+		userProfile: boolean
+		notification: boolean
+	}
+	setIsClicked: Dispatch<
+		SetStateAction<{
+			chat: boolean
+			cart: boolean
+			userProfile: boolean
+			notification: boolean
+		}>
+	>
 }
 
 const initialState = {
@@ -24,10 +39,15 @@ const StateContext = createContext<StoreContextInterface | null>(null)
 
 export const ContextProvider = ({ children }: PropsWithChildren) => {
 	const [activeMenu, setActiveMenu] = useState(true)
+	const [isClicked, setIsClicked] = useState(initialState)
+
+	const handleClick = (clicked: string) => {
+		setIsClicked({ ...initialState, [clicked]: true })
+	}
 
 	const globalContextValue = useMemo(
-		() => ({ activeMenu, setActiveMenu, initialState }),
-		[activeMenu, setActiveMenu]
+		() => ({ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick }),
+		[activeMenu, setActiveMenu, isClicked, setIsClicked]
 	)
 
 	return (

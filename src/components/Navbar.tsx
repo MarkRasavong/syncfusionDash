@@ -11,6 +11,7 @@ import {
 	StoreContextInterface,
 	useStateContext,
 } from '../contexts/ContextProvider'
+import { Cart, Chat, Notification, UserProfile } from '.'
 
 interface NavBtnProps {
 	title: string
@@ -24,7 +25,7 @@ const NavBtn = ({ title, customFn, icon, color, dotColor }: NavBtnProps) => (
 	<TooltipComponent content={title} position="BottomCenter">
 		<button
 			type="button"
-			onClick={customFn}
+			onClick={() => customFn()}
 			style={{ color }}
 			className="relative text-xl rounded-full p-3 hover:bg-light-gray"
 		>
@@ -43,12 +44,8 @@ NavBtn.defaultProps = {
 }
 
 const Navbar = () => {
-	const { setActiveMenu } = useStateContext() as StoreContextInterface
-
-	const handleClick = (e: string) => {
-		// eslint-disable-next-line no-console
-		console.log(e)
-	}
+	const { setActiveMenu, isClicked, handleClick } =
+		useStateContext() as StoreContextInterface
 
 	return (
 		<div className="flex justify-between p-2 md:mx-6 relative">
@@ -99,6 +96,10 @@ const Navbar = () => {
 						<MdKeyboardArrowDown className="text-gray-400 text-14" />
 					</div>
 				</TooltipComponent>
+				{isClicked.cart === true && <Cart />}
+				{isClicked.chat === true && <Chat />}
+				{isClicked.notification === true && <Notification />}
+				{isClicked.userProfile === true && <UserProfile />}
 			</div>
 		</div>
 	)
