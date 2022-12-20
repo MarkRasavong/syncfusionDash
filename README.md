@@ -88,6 +88,7 @@ npm start
 ✅ resolving ts module errors using index.d.ts <br>
 ✅ Context TS Types => PropsWithChildren <br>
 ✅ ```The object passed as the value prop to the Context provider (at line 29) changes every render. To fix this consider wrapping it in a useMemo hook.``` => useMemo to avoid rerender when the values haven't been changed <br>
+✅ using eventListeners to determine mobile resizing or if browser resizes ('resize', window.innerWidth)
 
 ## Where to find more 📞💻📧
 
