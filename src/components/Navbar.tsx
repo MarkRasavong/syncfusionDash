@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { FiShoppingCart } from 'react-icons/fi'
@@ -44,8 +44,26 @@ NavBtn.defaultProps = {
 }
 
 const Navbar = () => {
-	const { setActiveMenu, isClicked, handleClick } =
+	const { setActiveMenu, isClicked, handleClick, screenSize, setScreenSize } =
 		useStateContext() as StoreContextInterface
+
+	useEffect(() => {
+		const handleResize = () => setScreenSize(window.innerWidth)
+
+		window.addEventListener('resize', handleResize)
+
+		handleResize()
+
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	useEffect(() => {
+		if (screenSize <= 900) {
+			setActiveMenu(false)
+		} else {
+			setActiveMenu(true)
+		}
+	}, [screenSize])
 
 	return (
 		<div className="flex justify-between p-2 md:mx-6 relative">

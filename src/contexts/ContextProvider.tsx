@@ -26,6 +26,8 @@ export interface StoreContextInterface {
 			notification: boolean
 		}>
 	>
+	screenSize: number
+	setScreenSize: Dispatch<SetStateAction<number>>
 }
 
 const initialState = {
@@ -40,14 +42,30 @@ const StateContext = createContext<StoreContextInterface | null>(null)
 export const ContextProvider = ({ children }: PropsWithChildren) => {
 	const [activeMenu, setActiveMenu] = useState(true)
 	const [isClicked, setIsClicked] = useState(initialState)
+	const [screenSize, setScreenSize] = useState(0)
 
 	const handleClick = (clicked: string) => {
 		setIsClicked({ ...initialState, [clicked]: true })
 	}
 
 	const globalContextValue = useMemo(
-		() => ({ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick }),
-		[activeMenu, setActiveMenu, isClicked, setIsClicked]
+		() => ({
+			activeMenu,
+			setActiveMenu,
+			isClicked,
+			setIsClicked,
+			handleClick,
+			screenSize,
+			setScreenSize,
+		}),
+		[
+			activeMenu,
+			setActiveMenu,
+			isClicked,
+			setIsClicked,
+			screenSize,
+			setScreenSize,
+		]
 	)
 
 	return (
