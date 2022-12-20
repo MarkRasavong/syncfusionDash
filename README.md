@@ -85,6 +85,8 @@ npm start
 ✅ ctrl/cmd + w => to close current tabs on VS Code
 ✅ ctrl + ▶ => move to next whitespace
 ✅ resolving ts module errors using index.d.ts
+✅ Context TS Types => PropsWithChildren
+✅ ```The object passed as the value prop to the Context provider (at line 29) changes every render. To fix this consider wrapping it in a useMemo hook.``` => useMemo to avoid rerender when the values haven't been changed
 
 <br>
 
