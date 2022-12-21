@@ -1,8 +1,8 @@
 import React from 'react'
 import { GoPrimitiveDot } from 'react-icons/go'
 
-import { Button } from '../components'
-import { earningData } from '../data/dummy'
+import { Button, SparkLine } from '../components'
+import { earningData, SparklineAreaData } from '../data/dummy'
 
 const Ecommerce = () => (
 	<div className="mt-24">
@@ -88,8 +88,27 @@ const Ecommerce = () => (
 							</p>
 							<p className="text-gray-500 mt-1">Expense</p>
 						</div>
-						{/* Sparkline graph */}
-						<div className="mt-5">{/* Sparkline goes here */}</div>
+						{/* Sparkline graph w/ Button */}
+						<div className="mt-5">
+							<SparkLine
+								currentColor="blue"
+								id="line-sparkline"
+								type="Line"
+								height="80px"
+								width="250px"
+								data={SparklineAreaData}
+								color="blue"
+							/>
+						</div>
+						<div className="mt-10">
+							<Button
+								size="md"
+								color="white"
+								bgColor="blue"
+								text="Download Report"
+								borderRadius="10px"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
