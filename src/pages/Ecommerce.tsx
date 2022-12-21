@@ -2,7 +2,7 @@ import React from 'react'
 import { GoPrimitiveDot } from 'react-icons/go'
 
 import { Button } from '../components'
-import { earningData } from '../data/dummy'
+import { earningData, SparklineAreaData } from '../data/dummy'
 
 const Ecommerce = () => (
 	<div className="mt-24">
@@ -68,6 +68,28 @@ const Ecommerce = () => (
 							</span>
 							<span>Budget</span>
 						</p>
+					</div>
+				</div>
+				{/* left colum with  sparkline graph, budget and expense values */}
+				<div className="mt-10 flex gap-10 flex-wrap justify-center">
+					<div className="border-r-1 border-color m-4 pr-10">
+						<div>
+							<p>
+								<span className="text-semibold text-3xl">€93.129</span>
+								<span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
+									47%
+								</span>
+							</p>
+							<p className="text-gray-500 mt-1">Budget</p>
+						</div>
+						<div className="mt-8">
+							<p>
+								<span className="text-semibold text-3xl">€26.129</span>
+							</p>
+							<p className="text-gray-500 mt-1">Expense</p>
+						</div>
+						{/* Sparkline graph */}
+						<div className="mt-5">{/* Sparkline goes here */}</div>
 					</div>
 				</div>
 			</div>
