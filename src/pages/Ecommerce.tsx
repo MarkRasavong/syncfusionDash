@@ -2,7 +2,7 @@ import React from 'react'
 import { GoPrimitiveDot } from 'react-icons/go'
 
 import { Button } from '../components'
-import { earningData, SparklineAreaData } from '../data/dummy'
+import { earningData } from '../data/dummy'
 
 const Ecommerce = () => (
 	<div className="mt-24">
