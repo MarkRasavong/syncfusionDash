@@ -20,7 +20,9 @@ The features of `Syncfusion Dashboard` are -
 
 ## Optimizations 🔧🔧🔧
 
-⚙ If scaling the application, and implementing more global contexts, it is best to provide different Providers and memoize them in order to improve performance and reduce the rerendering of data with every interaction of the webpage. ex) closing and opening sidebar and rerendering the entire global context state.
+⚙ If scaling the application, and implementing more global contexts, it is best to provide different Providers and memoize them in order to improve performance and reduce the rerendering of data with every interaction of the webpage. ex) closing and opening sidebar and rerendering the entire global context state. <br>
+
+⚙ Although this is a front-end demo application, it can be a CRUD when adding a backend server and database
 
 If you like to contribute any features, fix bugs, or optimize a current feature, my contact information is listed bellow the readme.md 😃
 
