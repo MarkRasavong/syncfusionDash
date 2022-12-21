@@ -31,6 +31,7 @@ import { HiOutlineRefresh } from 'react-icons/hi'
 import { TiTick } from 'react-icons/ti'
 import { GiLouvrePyramid } from 'react-icons/gi'
 import { GrLocation } from 'react-icons/gr'
+import { AxisModel } from '@syncfusion/ej2-react-charts'
 import avatar from './avatar.jpg'
 import avatar2 from './avatar2.jpg'
 import avatar3 from './avatar3.png'
@@ -3099,7 +3100,7 @@ export const stackedCustomSeries = [
 	},
 ]
 
-export const stackedPrimaryXAxis = {
+export const stackedPrimaryXAxis: AxisModel = {
 	majorGridLines: { width: 0 },
 	minorGridLines: { width: 0 },
 	majorTickLines: { width: 0 },

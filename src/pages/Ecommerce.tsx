@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoPrimitiveDot } from 'react-icons/go'
 
-import { Button, SparkLine } from '../components'
+import { Button, SparkLine, Stacked } from '../components'
 import { earningData, SparklineAreaData } from '../data/dummy'
 
 const Ecommerce = () => (
@@ -109,6 +109,10 @@ const Ecommerce = () => (
 								borderRadius="10px"
 							/>
 						</div>
+					</div>
+					{/* Rt Stacked Graph */}
+					<div>
+						<Stacked width="320px" height="360px" />
 					</div>
 				</div>
 			</div>
