@@ -24,6 +24,7 @@ const Orders = () => (
 		<GridComponent
 			id="gridcomp"
 			dataSource={ordersData}
+			contextMenuItems={contextMenuItems}
 			allowPaging
 			allowSorting
 		>

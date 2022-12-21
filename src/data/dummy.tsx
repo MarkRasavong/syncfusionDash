@@ -32,6 +32,7 @@ import { TiTick } from 'react-icons/ti'
 import { GiLouvrePyramid } from 'react-icons/gi'
 import { GrLocation } from 'react-icons/gr'
 import { AxisModel } from '@syncfusion/ej2-react-charts'
+import { ContextMenuItem } from '@syncfusion/ej2-react-grids'
 import avatar from './avatar.jpg'
 import avatar2 from './avatar2.jpg'
 import avatar3 from './avatar3.png'
@@ -3033,7 +3034,7 @@ export const pieChartData = [
 	{ x: 'Insurance', y: 16, text: '16%' },
 ]
 
-export const contextMenuItems = [
+export const contextMenuItems: ContextMenuItem[] = [
 	'AutoFit',
 	'AutoFitAll',
 	'SortAscending',
