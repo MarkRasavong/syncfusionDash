@@ -28,6 +28,12 @@ export interface StoreContextInterface {
 	>
 	screenSize: number
 	setScreenSize: Dispatch<SetStateAction<number>>
+	currentColor: string
+	setCurrentColor: Dispatch<SetStateAction<string>>
+	currentMode: string
+	setCurrentMode: Dispatch<SetStateAction<string>>
+	themeSettings: boolean
+	setThemeSettings: Dispatch<SetStateAction<boolean>>
 }
 
 const initialState = {
