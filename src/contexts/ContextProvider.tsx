@@ -43,6 +43,19 @@ export const ContextProvider = ({ children }: PropsWithChildren) => {
 	const [activeMenu, setActiveMenu] = useState(true)
 	const [isClicked, setIsClicked] = useState(initialState)
 	const [screenSize, setScreenSize] = useState(0)
+	const [currentColor, setCurrentColor] = useState('#03C9D7')
+	const [currentMode, setCurrentMode] = useState('Light')
+	const [themeSettings, setThemeSettings] = useState(false)
+
+	const setMode = (e: React.MouseEvent<HTMLInputElement>) => {
+		setCurrentMode((e.target as HTMLInputElement).value)
+		localStorage.setItem('themeMode', (e.target as HTMLInputElement).value)
+	}
+
+	const setColor = (e: React.MouseEvent<HTMLInputElement>) => {
+		setCurrentColor((e.target as HTMLInputElement).value)
+		localStorage.setItem('colorMode', (e.target as HTMLInputElement).value)
+	}
 
 	const handleClick = (clicked: string) => {
 		setIsClicked({ ...initialState, [clicked]: true })
@@ -57,6 +70,14 @@ export const ContextProvider = ({ children }: PropsWithChildren) => {
 			handleClick,
 			screenSize,
 			setScreenSize,
+			currentColor,
+			currentMode,
+			setCurrentMode,
+			setCurrentColor,
+			themeSettings,
+			setThemeSettings,
+			setColor,
+			setMode,
 		}),
 		[
 			activeMenu,
@@ -65,6 +86,14 @@ export const ContextProvider = ({ children }: PropsWithChildren) => {
 			setIsClicked,
 			screenSize,
 			setScreenSize,
+			currentColor,
+			currentMode,
+			setCurrentMode,
+			setCurrentColor,
+			themeSettings,
+			setThemeSettings,
+			setColor,
+			setMode,
 		]
 	)
 
