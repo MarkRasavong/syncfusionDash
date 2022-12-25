@@ -11,7 +11,7 @@ import {
 } from '../contexts/ContextProvider'
 
 const Sidebar = () => {
-	const { activeMenu, setActiveMenu, screenSize } =
+	const { activeMenu, setActiveMenu, screenSize, currentColor } =
 		useStateContext() as StoreContextInterface
 
 	const handleCloseSideBar = () => {
@@ -61,6 +61,9 @@ const Sidebar = () => {
 										className={({ isActive }) =>
 											isActive ? activeLink : normalLink
 										}
+										style={({ isActive }) => ({
+											backgroundColor: isActive ? currentColor : '',
+										})}
 									>
 										{link.icon}
 										<span className="capitalize">{link.name}</span>
