@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {
 	createContext,
 	Dispatch,
@@ -34,6 +35,8 @@ export interface StoreContextInterface {
 	setCurrentMode: Dispatch<SetStateAction<string>>
 	themeSettings: boolean
 	setThemeSettings: Dispatch<SetStateAction<boolean>>
+	setColor: (e: React.MouseEvent<HTMLInputElement>) => void
+	setMode: (e: React.MouseEvent<HTMLInputElement>) => void
 }
 
 const initialState = {
@@ -43,7 +46,7 @@ const initialState = {
 	notification: false,
 }
 
-const StateContext = createContext<StoreContextInterface | null>(null)
+const StateContext = createContext<any>(null)
 
 export const ContextProvider = ({ children }: PropsWithChildren) => {
 	const [activeMenu, setActiveMenu] = useState(true)
