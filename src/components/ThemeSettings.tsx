@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-boolean-value */
 import React from 'react'
 import { MdOutlineCancel } from 'react-icons/md'
 import { BsCheck } from 'react-icons/bs'
@@ -28,13 +27,13 @@ const ThemeSettings = () => {
 				<div className="flex-col border-color ml-4 p-4 border-t-1">
 					<p className="text-lg font-semibold">Theme Options</p>
 					<div className="mt-4">
-						<label htmlFor="light" className="ml-2 text-md cursor-pointer">
+						<label htmlFor="light" className="text-md cursor-pointer">
 							<input
 								type="radio"
 								id="light"
 								name="theme"
 								value="Light"
-								className="cursor-pointer"
+								className="cursor-pointer mr-2"
 								onChange={setMode}
 								checked={currentMode === 'Light'}
 							/>
@@ -42,13 +41,13 @@ const ThemeSettings = () => {
 						</label>
 					</div>
 					<div className="mt-4">
-						<label htmlFor="dark" className="ml-2 text-md cursor-pointer">
+						<label htmlFor="dark" className="text-md cursor-pointer">
 							<input
 								type="radio"
 								id="dark"
 								name="theme"
 								value="Dark"
-								className="cursor-pointer"
+								className="cursor-pointer mr-2"
 								onChange={setMode}
 								checked={currentMode === 'Dark'}
 							/>

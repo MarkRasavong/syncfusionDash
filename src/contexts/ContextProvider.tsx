@@ -35,7 +35,7 @@ export interface StoreContextInterface {
 	setCurrentMode: Dispatch<SetStateAction<string>>
 	themeSettings: boolean
 	setThemeSettings: Dispatch<SetStateAction<boolean>>
-	setColor: (e: React.MouseEvent<HTMLInputElement>) => void
+	setColor: (color: string) => void
 	setMode: (e: React.MouseEvent<HTMLInputElement>) => void
 }
 
@@ -59,11 +59,13 @@ export const ContextProvider = ({ children }: PropsWithChildren) => {
 	const setMode = (e: React.MouseEvent<HTMLInputElement>) => {
 		setCurrentMode((e.target as HTMLInputElement).value)
 		localStorage.setItem('themeMode', (e.target as HTMLInputElement).value)
+		setThemeSettings(false)
 	}
 
-	const setColor = (e: React.MouseEvent<HTMLInputElement>) => {
-		setCurrentColor((e.target as HTMLInputElement).value)
-		localStorage.setItem('colorMode', (e.target as HTMLInputElement).value)
+	const setColor = (color: React.SetStateAction<string>) => {
+		setCurrentColor(color)
+		localStorage.setItem('colorMode', color as string)
+		setThemeSettings(false)
 	}
 
 	const handleClick = (clicked: string) => {
