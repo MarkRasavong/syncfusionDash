@@ -36,8 +36,6 @@ const App = () => {
 		currentMode,
 	} = useStateContext() as StoreContextInterface
 
-	console.log(currentMode)
-
 	return (
 		<div className={currentMode === 'Dark' ? 'dark' : ''}>
 			<BrowserRouter>
