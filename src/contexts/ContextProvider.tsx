@@ -89,6 +89,7 @@ export const ContextProvider = ({ children }: PropsWithChildren) => {
 			setThemeSettings,
 			setColor,
 			setMode,
+			initialState,
 		}),
 		[
 			activeMenu,
@@ -105,6 +106,7 @@ export const ContextProvider = ({ children }: PropsWithChildren) => {
 			setThemeSettings,
 			setColor,
 			setMode,
+			initialState,
 		]
 	)
 
