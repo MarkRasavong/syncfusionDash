@@ -1,9 +1,9 @@
 import React from 'react'
 
 interface ButtonProps {
-	bgColor: string
+	bgColor?: string
 	color: string
-	text: string
+	text?: string
 	borderRadius: string
 	icon?: JSX.Element
 	bgHoverColor?: string
@@ -39,6 +39,8 @@ Button.defaultProps = {
 	width: 'auto',
 	size: 'base',
 	onClick: () => {},
+	bgColor: '',
+	text: '',
 }
 
 export default Button
