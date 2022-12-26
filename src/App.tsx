@@ -1,8 +1,9 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
-import { Footer, Navbar, Sidebar, ThemeSettings } from './components'
+
+import { Navbar, Footer, Sidebar, ThemeSettings } from './components'
 import {
 	Ecommerce,
 	Orders,
@@ -12,29 +13,38 @@ import {
 	Pyramid,
 	Customers,
 	Kanban,
+	Line,
 	Area,
 	Bar,
 	Pie,
+	Financial,
 	ColorPicker,
 	ColorMapping,
 	Editor,
-	Line,
-	Financial,
 } from './pages'
 import './App.css'
-import {
-	StoreContextInterface,
-	useStateContext,
-} from './contexts/ContextProvider'
+
+import { useStateContext } from './contexts/ContextProvider'
 
 const App = () => {
 	const {
+		setCurrentColor,
+		setCurrentMode,
+		currentMode,
 		activeMenu,
+		currentColor,
 		themeSettings,
 		setThemeSettings,
-		currentColor,
-		currentMode,
-	} = useStateContext() as StoreContextInterface
+	} = useStateContext()
+
+	useEffect(() => {
+		const currentThemeColor = localStorage.getItem('colorMode')
+		const currentThemeMode = localStorage.getItem('themeMode')
+		if (currentThemeColor && currentThemeMode) {
+			setCurrentColor(currentThemeColor)
+			setCurrentMode(currentThemeMode)
+		}
+	}, [])
 
 	return (
 		<div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -73,20 +83,24 @@ const App = () => {
 						</div>
 						<div>
 							{themeSettings && <ThemeSettings />}
+
 							<Routes>
-								{/* Dashboard */}
+								{/* dashboard  */}
 								<Route path="/" element={<Ecommerce />} />
 								<Route path="/ecommerce" element={<Ecommerce />} />
-								{/* Pages */}
+
+								{/* pages  */}
 								<Route path="/orders" element={<Orders />} />
 								<Route path="/employees" element={<Employees />} />
 								<Route path="/customers" element={<Customers />} />
-								{/* Apps */}
+
+								{/* apps  */}
 								<Route path="/kanban" element={<Kanban />} />
 								<Route path="/editor" element={<Editor />} />
 								<Route path="/calendar" element={<Calendar />} />
 								<Route path="/color-picker" element={<ColorPicker />} />
-								{/* Charts */}
+
+								{/* charts  */}
 								<Route path="/line" element={<Line />} />
 								<Route path="/area" element={<Area />} />
 								<Route path="/bar" element={<Bar />} />
